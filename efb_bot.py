@@ -236,7 +236,10 @@ def main():
         fallbacks=[CommandHandler("cancel", start)]
     )
     app.add_handler(conv)
-    app.run_polling()
+    from telegram.ext import ApplicationBuilder
+
+app = ApplicationBuilder().token(BOT_TOKEN).build()
+app.run_polling()
 
 if __name__ == "__main__":
     main()
