@@ -9,9 +9,9 @@ from telegram.ext import (
 logging.basicConfig(level=logging.INFO)
 
 TOKEN = "8466441091:AAHGOsFPFIxdLEN8KGus2TJV7XgCzr2lZX8"
-ADMIN_ID = YOUR_ADMIN_TELEGRAM_ID  # admin foydalanuvchi ID sini yozing
+ADMIN_ID = "6764890600"  # admin foydalanuvchi ID sini yozing
 
-CHANNELS = ["liverpuluzofficial", "efootball_lfc"]
+CHANNELS = ["liverpuluzofficial", "efootball_lfc, "efootball26_uz""]
 
 # holatlar (states)
 (
@@ -28,8 +28,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = (
         "eFootball simulator o’yini bo’yicha turnirga qo’shilish uchun "
         "o’z ma’lumotlaringizni ushbu bot orqali tashkilotchilarga yuboring!\n\n"
-        "Guruhimiz: @EFOOTBALL26_UZ\n"
-        "KANALIMIZ: @EFOOTBALL_LFC"
+        "💬 Guruhimiz: @EFOOTBALL26_UZ\n"
+        "🔔 KANALIMIZ: @EFOOTBALL_LFC"
     )
     keyboard = [
         [InlineKeyboardButton(f"@{ch}", url=f"https://t.me/{ch}")]
@@ -46,7 +46,7 @@ async def check_subs(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if member.status in (ChatMember.LEFT, ChatMember.NOT_PARTICIPANT):
             await update.callback_query.answer("Iltimos, barcha kanallarga obuna bo‘ling!", show_alert=True)
             return START
-    await update.callback_query.answer("✅ Kanallarga obuna ekansiz.")
+    await update.callback_query.answer("✅ Ajoyib, davom etamiz!.")
     await update.callback_query.message.delete()
     await show_menu(update.callback_query.message, context)
     return MENU
@@ -123,7 +123,7 @@ async def reg_power(update, context):
     if pw < 3000:
         await update.message.reply_text(
             "⚠️ Kuch 3000 dan kam – turnirda qatnashish uchun yetarli emas.\n"
-            "Bosh savol bo‘lsa admin bilan aloqa qiling."
+            "Savolingiz bo'lsa bosh menyu orqali admin bilan aloqaga chiqing."
         )
         return MENU
     await update.message.reply_text("Telefon raqamingizni yuboring (O'zbekiston yoki boshqa davlat):")
@@ -201,7 +201,7 @@ async def result_upload(update, context):
         await context.bot.send_photo(chat_id=ADMIN_ID, photo=update.message.photo[-1].file_id, caption=caption)
     else:
         await context.bot.send_video(chat_id=ADMIN_ID, video=update.message.video.file_id, caption=caption)
-    await update.message.reply_text("✅ Natija yaratilganga yuborildi.")
+    await update.message.reply_text("✅ Natija adminga yuborildi.")
     return MENU
 
 async def forward_message(update, context):
