@@ -68,7 +68,7 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.callback_query.message.reply_text("Ism Familiyangizni kiriting:")
         return REG_NAME
     elif data == "info":
-        await update.callback_query.message.reply_text("🎮 Turnir haqida ma'lumot bu yerd!');
+        await update.callback_query.message.reply_text("🎮 Turnir haqida ma'lumot bu yerda!");
     elif data == "list":
         lines = []
         for uid in approved:
