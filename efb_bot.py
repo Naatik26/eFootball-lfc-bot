@@ -8,10 +8,10 @@ from telegram.ext import (
 
 logging.basicConfig(level=logging.INFO)
 
-TOKEN = "8466441091:AAHGOsFPFIxdLEN8KGus2TJV7XgCzr2lZX8"
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
 ADMIN_ID = "6764890600"  # admin foydalanuvchi ID sini yozing
 
-CHANNELS = ["liverpuluzofficial", "efootball_lfc, "efootball26_uz""]
+CHANNELS = ["liverpuluzofficial", "efootball_lfc, "efootball26_uz"]
 
 # holatlar (states)
 (
