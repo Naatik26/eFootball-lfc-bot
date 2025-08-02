@@ -3,7 +3,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, ReplyKe
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes, MessageHandler, filters
 
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
-)
+
 
 logging.basicConfig(level=logging.INFO)
 
@@ -25,7 +25,7 @@ approved = set()   # qabul qilinganlar user_id lari
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = (
-        "eFootball simulator o’yini bo’yicha turnirga qo’shilish uchun "
+        "Assalom-u Aleykum! eFootball simulator o’yini bo’yicha turnirga qo’shilish uchun "
         "o’z ma’lumotlaringizni ushbu bot orqali tashkilotchilarga yuboring!\n\n"
         "💬 Guruhimiz: @EFOOTBALL26_UZ\n"
         "🔔 KANALIMIZ: @EFOOTBALL_LFC"
