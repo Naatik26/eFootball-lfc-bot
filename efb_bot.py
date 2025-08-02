@@ -1,9 +1,8 @@
-import logging
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, ChatMember
-from telegram.ext import (
-    ApplicationBuilder, CommandHandler,
-    MessageHandler, filters, ContextTypes,
-    CallbackQueryHandler, ConversationHandler
+import os
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup
+from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes, MessageHandler, filters
+
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
 )
 
 logging.basicConfig(level=logging.INFO)
