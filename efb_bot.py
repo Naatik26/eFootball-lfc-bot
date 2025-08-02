@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.INFO)
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 ADMIN_ID = "6764890600"  # admin foydalanuvchi ID sini yozing
 
-CHANNELS = ["liverpuluzofficial", "efootball_lfc, "efootball26_uz"]
+CHANNELS = ["liverpuluzofficial", "efootball_lfc", "efootball26_uz"]
 
 # holatlar (states)
 (
