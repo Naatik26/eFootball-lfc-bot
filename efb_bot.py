@@ -8,9 +8,7 @@ logging.basicConfig(level=logging.INFO)
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 
 
-logging.basicConfig(level=logging.INFO)
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN")
 ADMIN_ID = "6764890600"  # admin foydalanuvchi ID sini yozing
 
 CHANNELS = ["liverpuluzofficial", "efootball_lfc", "efootball26_uz"]
@@ -214,7 +212,6 @@ async def forward_message(update, context):
     return MENU
 
 def main():
-    app = ApplicationBuilder().token(BOT_TOKEN).build()
     conv = ConversationHandler(
         entry_points=[CommandHandler("start", start)],
         states={
@@ -238,7 +235,6 @@ def main():
     app.add_handler(conv)
     from telegram.ext import ApplicationBuilder
 
-app = ApplicationBuilder().token(BOT_TOKEN).build()
 app.run_polling()
 
 if __name__ == "__main__":
