@@ -235,7 +235,14 @@ def main():
     app.add_handler(conv)
     from telegram.ext import ApplicationBuilder
 
-app.run_polling()
+def main():
+    app = ApplicationBuilder().token(BOT_TOKEN).build()
+
+    # Handlerlar shu yerda qo‘shiladi...
+    app.add_handler(conv_handler)  # yoki boshqa handlerlar
+
+    logging.info("Bot ishga tushdi!")
+    app.run_polling()
 
 if __name__ == "__main__":
     main()
