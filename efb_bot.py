@@ -73,8 +73,8 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif data == "list":
         if approved:
             names = [participants[uid]["name"] for uid in approved]
-            await update.callback_query.message.reply_text("✅ Ishtirokchilar:"
-" + "\n".join(names))
+            matn = "✅ Ishtirokchilar:\n" + "\n".join(names)
+await update.callback_query.message.reply_text(matn)
         else:
             await update.callback_query.message.reply_text("Hali ishtirokchilar ro'yxati mavjud emas.")
     elif data == "submit_result":
