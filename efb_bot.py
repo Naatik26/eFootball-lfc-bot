@@ -301,7 +301,7 @@ async def register_phone(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         confirm_text,
         reply_markup=InlineKeyboardMarkup(keyboard)
-    
+    )
     return CONFIRM_SEND
 
 async def confirm_send(update: Update, context: ContextTypes.DEFAULT_TYPE):
